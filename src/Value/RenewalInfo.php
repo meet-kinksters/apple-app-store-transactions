@@ -30,8 +30,6 @@ final class RenewalInfo {
   public function __construct(
     public readonly string $autoRenewProductId,
     public readonly string $environment,
-    public readonly int $expirationIntent,
-    public readonly bool $isInBillingRetryPeriod,
     public readonly string $originalTransactionId,
     public readonly string $productId,
     public readonly int $signedDate,
@@ -40,6 +38,8 @@ final class RenewalInfo {
     public readonly ?string $offerIdentifier = NULL,
     public readonly ?int $offerType = NULL,
     public readonly ?int $priceIncreaseStatus = NULL,
+    public readonly ?int $expirationIntent = NULL,
+    public readonly ?bool $isInBillingRetryPeriod = NULL,
   ) {}
 
 }
