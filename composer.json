@@ -1,12 +1,21 @@
 {
-  "name": "meet-kinksters/apple-app-store-transactions",
-  "type": "library",
-  "description": "Helpful integrations with the Apple App Store/iTunes",
-  "keywords": ["Apple"],
-  "license": "MIT",
-  "homepage": "https://github.com/meet-kinksters/apple-app-store-transactions",
-  "require": {
-      "aporat/store-receipt-validator": "^4",
-      "eventsauce/object-hydrator": "^0.3.1"
-  }
+    "name": "meet-kinksters/apple-app-store-transactions",
+    "type": "library",
+    "description": "Helpful integrations with the Apple App Store/iTunes",
+    "keywords": [
+        "Apple"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/meet-kinksters/apple-app-store-transactions",
+    "require": {
+        "aporat/store-receipt-validator": "^4",
+        "eventsauce/object-hydrator": "^0.3.1",
+        "php": "^8.1",
+        "firebase/php-jwt": "^5|^6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kinksters\\Apple\\": "src"
+        }
+    }
 }
