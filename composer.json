@@ -9,7 +9,7 @@
     "homepage": "https://github.com/meet-kinksters/apple-app-store-transactions",
     "require": {
         "aporat/store-receipt-validator": "^4",
-        "eventsauce/object-hydrator": "^0.3.1|^1",
+        "eventsauce/object-hydrator": "^1",
         "php": "^8.1",
         "firebase/php-jwt": "^5|^6"
     },

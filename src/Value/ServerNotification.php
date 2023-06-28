@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Kinksters\Apple\Value;
 
+use EventSauce\ObjectHydrator\DefinitionProvider;
+use EventSauce\ObjectHydrator\KeyFormatterWithoutConversion;
 use EventSauce\ObjectHydrator\ObjectHydrator;
+use EventSauce\ObjectHydrator\ObjectMapperUsingReflection;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use ReceiptValidator\iTunes\PurchaseItem;
@@ -75,7 +78,9 @@ final class ServerNotification {
    */
   protected static function renewalInfoFromServerNotification(array $notification, Key $key): RenewalInfo {
     assert(!empty($notification['data']->signedRenewalInfo));
-    $hydrator = new ObjectHydrator();
+    $hydrator = new ObjectMapperUsingReflection(new DefinitionProvider(
+      keyFormatter: new KeyFormatterWithoutConversion(),
+    ));
     return $hydrator->hydrateObject(
       RenewalInfo::class,
       (array) JWT::decode(urldecode($notification['data']->signedRenewalInfo), $key)
