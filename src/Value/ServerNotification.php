@@ -23,13 +23,13 @@ final class ServerNotification {
    * @param \Kinksters\Apple\Value\ServerNotificationType $type
    * @param \ReceiptValidator\iTunes\PurchaseItem $purchaseItem
    * @param \Kinksters\Apple\Value\RenewalInfo|null $renewalInfo
-   * @param \Kinksters\Apple\Value\ServerNotificationSubtype|null $subtype
+   * @param \Kinksters\Apple\Value\ServerNotificationSubType|null $subtype
    */
   public function __construct(
     public readonly ServerNotificationType $type,
     public readonly PurchaseItem $purchaseItem,
     public readonly ?RenewalInfo $renewalInfo = NULL,
-    public readonly ?ServerNotificationSubtype $subtype = NULL,
+    public readonly ?ServerNotificationSubType $subtype = NULL,
   ) {}
 
   /**
